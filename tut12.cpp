@@ -1,38 +1,31 @@
 #include<iostream>
 using namespace std;
 
-typedef struct employee
-{
-    /* data */
-    int eid;
-    char favchar;
-    float salary;
-} ep;
-
-union money
-{
-    /* data */
-    int rice; //4 byte
-    char car; //1  byte
-    float pounds; //4 byte
-};
-
+// Function prototype
+// type function-name (arguments);
+//int sum(int a, int b); //----> Acceptable
+//int sum(int a, b); //---> Not Acceptable
+int sum(int, int ); //---> Acceptable 
+void g(void); //---> Acceptable
 
 int main(){
-
-    enum meal{ breakfast, lunch, dinner};
-    meal m1 = breakfast;
-    cout<<(m1==2);
-    // union money m1;
-    // m1.rice = 34;
-    // m1.car = 'c';
-    // cout<<m1.car;
-    // harry.eid = 1;
-    // harry.favchar = 'c';
-    // harry.salary = 1200000;
-    // cout<<"The value is "<<harry.eid<<endl;
-    // cout<<"The value is "<<harry.favchar<<endl;
-    // cout<<"The value is "<<harry.salary<<endl;
     
+    int num1, num2;
+    cout<<"Enter first number"<<endl;
+    cin>>num1;
+    cout<<"enter second number"<<endl;
+    cin>>num2;
+    // num1 and num2 are actual parameters
+    cout<<"The sum is "<<sum(num1, num2);
+    g();
     return 0;
-}
+}    
+
+    int sum(int a, int b){
+        // formal Parameters a and b will be taking values from actual parameters num1 and num2
+        int c = a + b;
+        return c;
+    }
+void g(){
+    cout<<"\nHello, Good Morning";
+}    
